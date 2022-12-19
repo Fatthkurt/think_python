@@ -1,0 +1,48 @@
+def identity_matrix(m,n):
+  b= []
+  c=0
+  while n >0 :
+      a=[0]*m
+      a[c]= 1
+      c= 1+c
+      n = n -1
+      b.append(a)
+
+  return b   
+
+def identity_matrix_times_x(m,n,x):
+  b= []
+  c=0
+  while n >0 :
+      a=[0]*m
+      a[c]= 1*x
+      c= 1+c
+      n = n -1
+      b.append(a)
+
+  return b   
+
+def identity_matrix_with_center_as_x_y(m,n,x,y):
+  b= []
+  c=0
+  x=int((m+1)/(2))
+  while n >0 :
+      if not n ==x:
+       a=[0]*m
+       a[c]= 1
+       c= 1+c
+       n = n -1
+       b.append(a)
+      elif n ==x:
+       a=[0]*m
+       a[c]= 1*x*y
+       c= 1+c
+       n = n -1
+       b.append(a)
+      
+
+  return b   
+    
+print(identity_matrix(5,5))
+print(identity_matrix_times_x(5,5,3))
+print(identity_matrix_with_center_as_x_y(5,5,3,5))
